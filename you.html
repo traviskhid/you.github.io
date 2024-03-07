@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('https://www.bing.com/images/search?view=detailV2&ccid=L4%2bBCOqS&id=26C568CE80A325CB4FBB8A529F1A6A794644D08F&thid=OIP.L4-BCOqSN-yDPvXOqS0VUAHaER&mediaurl=https%3a%2f%2fwww.reviewsxp.com%2fblog%2fwp-content%2fuploads%2f2018%2f07%2fRomantic-Loving-Places-For-Couples-850x491.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.2f8f8108ea9237ec833ef5cea92d1550%3frik%3dj9BERnlqGp9Sig%26pid%3dImgRaw%26r%3d0&exph=491&expw=850&q=romantic+pictures+at+location&simid=608048979019461689&FORM=IRPRST&ck=349597BF848C43BF65AC4152A3994A60&selectedIndex=9&itb=0') center/cover no-repeat;
+    }
+
+    .valentines {
+      cursor: pointer;
+      position: relative;
+      animation: float 4s ease-in-out infinite alternate;
+    }
+
+    .envelope {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: #f08080;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .front {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+      border-right: 150px solid #f4978e;
+      right: -5px;
+      top: 0;
+      transition: border-color 0.5s ease-in-out;
+    }
+
+    .envelope:hover .front {
+      border-right-color: #ed6a5a;
+    }
+
+    .card {
+      position: relative;
+      width: 270px;
+      height: 170px;
+      background-color: #eae2b7;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: box-shadow 0.5s ease-in-out;
+    }
+
+    .envelope:hover .card {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .text {
+      font-family: "Brush Script MT", cursive;
+      font-size: 28px;
+      text-align: center;
+      color: #003049;
+      margin: 10px 0;
+    }
+
+    .heart {
+      width: 50px;
+      height: 50px;
+      background-color: #d62828;
+      border-radius: 50%;
+      position: absolute;
+      top: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .hearts {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #d62828;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .heart:before {
+      top: -25px;
+      left: 0;
+    }
+
+    .heart:after {
+      top: 0;
+      left: 25px;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: #003049;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #1a508b;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .ring {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: url('https://www.bing.com/images/search?view=detailV2&ccid=72o%2fNgkW&id=AC608FC0111330B02149447411F138EF7EC3E9D7&thid=OIP.72o_NgkWTh4EK5pITgkHgwHaHa&mediaurl=https%3a%2f%2fwww.freeiconspng.com%2fuploads%2fsolitaire-wedding-rings-png-11.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ef6a3f3609164e1e042b9a484e090783%3frik%3d1%252bnDfu848RF0RA%26pid%3dImgRaw%26r%3d0&exph=1000&expw=1000&q=wedding+ring+png&simid=608014958581060075&FORM=IRPRST&ck=25A6E5209480FB6E8A29346E80A1F1E3&selectedIndex=34&itb=1') center/cover no-repeat;
+      bottom: -25px;
+      right: -50px;
+      animation: spin 4s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: sparkle 0.5s ease infinite alternate;
+    }
+
+    .sparkle1 {
+      top: 20px;
+      left: 60px;
+    }
+
+    .sparkle2 {
+      top: 50px;
+      left: 150px;
+    }
+
+    .sparkle3 {
+      top: 100px;
+      left: 220px;
+    }
+
+    @keyframes sparkle {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body> 
+  <div class="container">
+    <div class="valentines">
+      <div class="envelope">
+        <div class="front"></div>
+        <div class="card">
+          <div class="text">Will you be my Girlfriend?</div>
+          <div class="sparkle sparkle1"></div>
+          <div class="sparkle sparkle2"></div>
+          <div class="sparkle sparkle3"></div>
+        </div>
+        <div class="heart"></div>
+        <div class="hearts">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <div class="four"></div>
+          <div class="five"></div>
+        </div>
+        <div class="ring"></div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <button class="button" onclick="location.href='yes.html'">Yes</button>
+    <button class="button" onclick="location.href='no.html'">No</button>
+  </div>
+</body>
+</html>
